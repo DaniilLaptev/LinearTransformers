@@ -225,7 +225,8 @@ print(f'Mean: {np.mean(res):.5f}, STD: {np.std(res):.5f}')
 \gamma_Q, \gamma_K, \beta_Q, \beta_K \in \mathbb{R}^{d / h}
 ```
 
-```math \phi_Q(Q) \phi^T_K(K) = \big((\gamma_QQ + \beta_Q) (\gamma_KK + \beta_K)^T\big)^2
+```math 
+\phi_Q(Q) \phi^T_K(K) = \big((\gamma_QQ + \beta_Q) (\gamma_KK + \beta_K)^T\big)^2
 ```
 
 Функция  применяется построчно. Полученный механизм внимания можно записать так:
