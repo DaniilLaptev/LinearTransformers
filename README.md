@@ -12,7 +12,9 @@
 ```math
 Q=W_QX, \quad K = W_KX, \quad V = W_VX
 ```
-```math \text{Attention}(Q, K, V) =\text{softmax}\bigg(\frac{QK^T}{\sqrt{d}}\bigg)V
+
+```math 
+\text{Attention}(Q, K, V) =\text{softmax}\bigg(\frac{QK^T}{\sqrt{d}}\bigg)V
 ```
 
 Основной особенностью механизма внимания является возможность оценить взаимосвязи между токенами. Скалярное произведение даёт нам некоторую меру сходства двух векторов, соответственно в получаемой $N \times N$ матрице элементы представляют собой величину попарного сходства каждого вектора из $Q$ с каждым вектором из $K$. 
@@ -146,6 +148,7 @@ O_i = \frac{\sum_{j = 0}^{k} \phi^T(Q_i) \phi(K_j)V_j}{\sum_{n = 0}^{k} \phi^T(Q
 ```math
 \phi(x)=(1,kx_1,...,kx_n, lx_1^2, lx_1x_2,...,lx_n^2)
 ```
+
 ```math 
 \phi^T(Q_i) \phi(K_j) = 1 + k^2Q_i^TK_j+l^2(Q_i^TK_j)^2
 ```
@@ -221,6 +224,7 @@ print(f'Mean: {np.mean(res):.5f}, STD: {np.std(res):.5f}')
 ```math
 \gamma_Q, \gamma_K, \beta_Q, \beta_K \in \mathbb{R}^{d / h}
 ```
+
 ```math \phi_Q(Q) \phi^T_K(K) = \big((\gamma_QQ + \beta_Q) (\gamma_KK + \beta_K)^T\big)^2
 ```
 
