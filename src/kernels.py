@@ -30,7 +30,7 @@ class BasedKernel(nn.Module):
     def forward(self, x):
         x2 = (x.unsqueeze(-1) * x.unsqueeze(-2)).flatten(start_dim=-2)
         return torch.cat([
-            torch.ones(x[..., :1].shape),
+            torch.ones(x[..., :1].shape).to(x.device),
             x / self.rrd,
             x2 / self.r2 / self.rd
         ], dim = -1)

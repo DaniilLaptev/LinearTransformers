@@ -2,3 +2,5 @@
 prototyping.ipynb
 test.ipynb
 __pycache__
+models
+wandb
